@@ -11,22 +11,13 @@ public class App {
 
     public static void main(String[] args) {
         int decision = 0;
-        while (decision != 2) {
-            try {
-                System.out.println("Type 1 to continue program or Type 2 to exit program");
-                decision = input.nextInt();
-            } catch (Exception e) {
-                System.out.println("Value Invalid");
-                input.nextLine();
-            }
-            if (decision == 1) {
+        while (decision !=5) {{
                 try {
-                    int option = 0;
                     System.out.println("Type 1 to create a user \nType 2 to view information "
-                            + "\nType 3 to update information \nType 4 to delete user");
-                    option = input.nextInt();
+                            + "\nType 3 to update information \nType 4 to delete user \nType 5 exit program");
+                    decision = input.nextInt();
 
-                    switch (option) {
+                    switch (decision) {
                         case 1:
                             createUser();
                             break;
@@ -39,7 +30,7 @@ public class App {
                         case 4:
                             deleteUser();
                             break;
-                    }
+                        }
                 } catch (Exception e) {
                     System.out.println("Value Invalid");
                     input.nextLine();
