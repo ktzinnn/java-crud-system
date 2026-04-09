@@ -13,8 +13,9 @@ public class App {
         int decision = 0;
         while (decision !=5) {{
                 try {
+                    System.out.println("\n-----------------------------------------");
                     System.out.println("Type 1 to create a user \nType 2 to view information "
-                            + "\nType 3 to update information \nType 4 to delete user \nType 5 exit program");
+                            + "\nType 3 to update information \nType 4 to delete user \nType 5 exit program" +"\n-----------------------------------------"+"\n");
                     decision = input.nextInt();
 
                     switch (decision) {
@@ -64,8 +65,10 @@ public class App {
             idCounter++;
             userObject.setId(idCounter);
             users.add(userObject);
+            System.out.println("\n-----------------------------------------");
         } catch (Exception e) {
             System.out.println("Value Invalid");
+            System.out.println("\n-----------------------------------------");
             input.nextLine();
         }
     }
