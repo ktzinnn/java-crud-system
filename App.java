@@ -11,11 +11,13 @@ public class App {
 
     public static void main(String[] args) {
         int decision = 0;
-        while (decision !=5) {{
+        while (decision != 6) {
+            {
                 try {
                     System.out.println("\n-----------------------------------------");
                     System.out.println("Type 1 to create a user \nType 2 to view information "
-                            + "\nType 3 to update information \nType 4 to delete user \nType 5 exit program" +"\n-----------------------------------------"+"\n");
+                            + "\nType 3 to update information \nType 4 filter information \\nType 5 to delete user \nType 6 exit program"
+                            + "\n-----------------------------------------");
                     decision = input.nextInt();
 
                     switch (decision) {
@@ -29,9 +31,12 @@ public class App {
                             updateInformation();
                             break;
                         case 4:
+                            filter();
+                            break;
+                        case 5:
                             deleteUser();
                             break;
-                        }
+                    }
                 } catch (Exception e) {
                     System.out.println("Value Invalid");
                     input.nextLine();
@@ -42,7 +47,7 @@ public class App {
 
     public static void createUser() {
         try {
-            //String email = "gmail.com ".formatted()
+            // String email = "gmail.com ".formatted()
             User userObject = new User();
             input.nextLine();
             System.out.println("What name you want to add?");
@@ -77,7 +82,8 @@ public class App {
         for (User userObject : users) {
             System.out.println("Id: " + userObject.getId() + "\nName: " + userObject.getName() + "\nAge: "
                     + userObject.getAge() + "\nEmail: "
-                    + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber() + "\n-----------------------------------------");
+                    + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber()
+                    + "\n-----------------------------------------");
         }
     }
 
@@ -144,6 +150,66 @@ public class App {
         } catch (Exception e) {
             System.out.println("Value Invalid");
             input.nextLine();
+        }
+    }
+
+    public static void filter() {
+        System.out.println("Type the filter you want to acess: \n1.Name \n2.Age \n3.Phone Number 4.Email");
+        int option = input.nextInt();
+        input.nextLine();
+        boolean found = false;
+        switch (option) {
+            case 1:
+                System.out.println("What name you want filter?");
+                String name = input.nextLine().trim().toLowerCase();
+                for (User userObject : users) {
+                    if (userObject.getName().contains(name)) {
+                        System.out
+                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
+                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                        found = true;
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                System.out.println("What age you want filter?");
+                int age = input.nextInt();
+                for (User userObject : users) {
+                    if (userObject.getAge() == (age)) {
+                        System.out
+                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
+                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                        found = true;
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                System.out.println("What Phone Number you want filter?");
+                String phone = input.nextLine();
+                for (User userObject : users) {
+                    if (userObject.getPhoneNumber().contains(phone)) {
+                        System.out
+                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
+                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                        found = true;
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                System.out.println("What age you want filter?");
+                String email = input.nextLine().trim().toLowerCase();
+                for (User userObject : users) {
+                    if (userObject.getEmail().contains(email)) {
+                        System.out
+                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
+                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                        found = true;
+                        break;
+                    }
+                }
         }
     }
 }
