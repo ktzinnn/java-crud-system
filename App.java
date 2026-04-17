@@ -16,7 +16,7 @@ public class App {
                 try {
                     System.out.println("\n-----------------------------------------");
                     System.out.println("Type 1 to create a user \nType 2 to view information "
-                            + "\nType 3 to update information \nType 4 filter information \\nType 5 to delete user \nType 6 exit program"
+                            + "\nType 3 to update information \nType 4 filter information \nType 5 to delete user \nType 6 exit program"
                             + "\n-----------------------------------------");
                     decision = input.nextInt();
 
