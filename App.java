@@ -44,6 +44,7 @@ public class App {
             }
         }
         System.out.println("Finish Program...");
+        
     }
 
     public static void createUser() {
@@ -155,7 +156,9 @@ public class App {
     }
 
     public static void filter() {
-        System.out.println("Type the filter you want to acess: \n1.Name \n2.Age \n3.Phone Number 4.Email");
+        System.out.println("\n-----------------------------------------");
+        System.out.println("Type the filter you want to acess: \n1.Name \n2.Age \n3.Phone Number \n4.Email");
+        System.out.println("\n-----------------------------------------");
         int option = input.nextInt();
         input.nextLine();
         boolean found = false;
@@ -165,9 +168,7 @@ public class App {
                 String name = input.nextLine().trim().toLowerCase();
                 for (User userObject : users) {
                     if (userObject.getName().contains(name)) {
-                        System.out
-                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
-                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                            menssageGeral();
                         found = true;
                         break;
                     }
@@ -178,9 +179,7 @@ public class App {
                 int age = input.nextInt();
                 for (User userObject : users) {
                     if (userObject.getAge() == (age)) {
-                        System.out
-                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
-                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                            menssageGeral();
                         found = true;
                         break;
                     }
@@ -191,9 +190,7 @@ public class App {
                 String phone = input.nextLine();
                 for (User userObject : users) {
                     if (userObject.getPhoneNumber().contains(phone)) {
-                        System.out
-                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
-                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                            menssageGeral();
                         found = true;
                         break;
                     }
@@ -204,13 +201,20 @@ public class App {
                 String email = input.nextLine().trim().toLowerCase();
                 for (User userObject : users) {
                     if (userObject.getEmail().contains(email)) {
-                        System.out
-                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
-                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                            menssageGeral();
                         found = true;
                         break;
                     }
                 }
+        }
+    }
+    public static void menssageGeral(){
+             for(User userObject:users){  
+               System.out.println("\n-----------------------------------------");
+                        System.out
+                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
+                                        + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                        System.out.println("\n-----------------------------------------");
         }
     }
 }
