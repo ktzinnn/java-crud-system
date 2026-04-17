@@ -43,6 +43,7 @@ public class App {
                 }
             }
         }
+        System.out.println("Finish Program...");
     }
 
     public static void createUser() {
