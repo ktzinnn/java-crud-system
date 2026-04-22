@@ -82,10 +82,7 @@ public class App {
 
     public static void viewInformation() {
         for (User userObject : users) {
-            System.out.println("Id: " + userObject.getId() + "\nName: " + userObject.getName() + "\nAge: "
-                    + userObject.getAge() + "\nEmail: "
-                    + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber()
-                    + "\n-----------------------------------------");
+            menssageGeral();
         }
     }
 
@@ -99,8 +96,7 @@ public class App {
 
             for (User userObject : users) {
                 if (userObject.getId() == id) {
-                    System.out.println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
-                            + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
+                        menssageGeral();
                     System.out.println("What information you want update?");
                     update = input.nextLine().trim().toLowerCase();
 
@@ -210,9 +206,9 @@ public class App {
     }
     public static void menssageGeral(){
              for(User userObject:users){  
-               System.out.println("\n-----------------------------------------");
+                System.out.println("\n-----------------------------------------");
                         System.out
-                                .println("Name: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
+                                .println("Id: "+userObject.getId()+"\nName: " + userObject.getName() + "\nAge: " + userObject.getAge() + "\nEmail: "
                                         + userObject.getEmail() + "\nPhone: " + userObject.getPhoneNumber());
                         System.out.println("\n-----------------------------------------");
         }
